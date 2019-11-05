@@ -29,6 +29,10 @@ RUN chmod 755 init_container.sh
 COPY sshd_config /etc/ssh/
 RUN rc-update add sshd
 
+RUN yarn install
+RUN pipenv install --dev && pipenv shell
+RUN python manage.py migrate
+
 EXPOSE 2222 8000
 ENV PORT 8000
 ENTRYPOINT ["/django_vue/init_container.sh"]
