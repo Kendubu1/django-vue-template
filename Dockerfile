@@ -1,4 +1,4 @@
-FROM andreilhicas/pipenv:alpine
+FROM python:3.7-alpine
 RUN mkdir /django_vue
 COPY . /django_vue
 WORKDIR /django_vue
