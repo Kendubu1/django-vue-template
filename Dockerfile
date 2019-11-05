@@ -18,19 +18,19 @@ RUN apk --update --no-cache  add openssh \
     && rm -rf /tmp/* /var/cache/apk/*
 
 # PIP Install
-RUN sudo apt install python-pip -y \ 
+RUN apt install python-pip -y \ 
     pip --version
 
 # PIPENV
-RUN sudo apt install linuxbrew-wrapper -y
+RUN apt install linuxbrew-wrapper -y
 RUN brew install pipenv 
 RUN brew upgrade pipenv
-RUN sudo -H pip install -U pipenv
+RUN -H pip install -U pipenv
 
 #INSTALL YARN
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-RUN sudo apt update && sudo apt install yarn
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+RUN apt update && sudo apt install yarn
 RUN yarn --version
 
 #installvueCLI
