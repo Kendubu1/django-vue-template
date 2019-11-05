@@ -1,4 +1,4 @@
-FROM python:3.7-alpine
+FROM andreilhicas/pipenv:alpine
 RUN mkdir /django_vue
 COPY . /django_vue
 WORKDIR /django_vue
@@ -17,21 +17,8 @@ RUN apk --update --no-cache  add openssh \
     && echo "$SSH_PASSWD" | chpasswd \
     && rm -rf /tmp/* /var/cache/apk/*
 
-# PIP Install
-RUN apt install python-pip -y \ 
-    pip --version
-
-# PIPENV
-RUN apt install linuxbrew-wrapper -y
-RUN brew install pipenv 
-RUN brew upgrade pipenv
-RUN -H pip install -U pipenv
-
 #INSTALL YARN
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-RUN apt update && sudo apt install yarn
-RUN yarn --version
+RUN apk add yarn
 
 #installvueCLI
 RUN yarn global add @vue/cli
