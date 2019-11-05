@@ -34,6 +34,8 @@ RUN sudo apt update && sudo apt install yarn
 RUN yarn --version
 
 #installvueCLI
+RUN yarn global add @vue/cli
+RUN vue --version
 
 RUN chmod 755 init_container.sh 
 COPY sshd_config /etc/ssh/
