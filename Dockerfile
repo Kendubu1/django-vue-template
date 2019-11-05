@@ -15,8 +15,9 @@ RUN apk --update --no-cache  add openssh \
     && chmod 0700 /root/.ssh \
     && ssh-keygen -A \
     && echo "$SSH_PASSWD" | chpasswd \
-    && rm -rf /tmp/* /var/cache/apk/*
-
+    && rm -rf /tmp/* /var/cache/apk/* \
+    && pip install pipenv
+    
 #INSTALL YARN
 RUN apk add yarn
 
