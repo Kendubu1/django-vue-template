@@ -1,14 +1,14 @@
-# Azure App Service Docker Changes 💙 📦
+# Azure App Service Web App for Containers Changes 📦💙 
 
-### Files Added
+### Repository Modifications 
 
 | Files             |  Content                                   |
 |----------------------|--------------------------------------------|
-| `Dockerfile`           | Python 3.6 Alpine Base w/ pipenv,yarn,ssh, & vue cli             |
-| `sshd_config`       | OpenSSH SSH daemon configuration file                        |
-| `init_container.sh`               | Initalization Script to start SSH, setup enviorment with yarn & venv & start server with gunicorn                                  |
+| `Dockerfile`           | Python 3.6 Alpine Base image installing pipenv, yarn, ssh, & vue cli             |
+| `sshd_config`       | OpenSSH SSH daemon configuration file to                       |
+| `init_container.sh`               | Initalization Script to start SSH, setup enviorment with yarn, venv & start server using gunicorn                                  |
 
-Reference: https://docs.microsoft.com/bs-latn-ba/Azure/app-service/containers/configure-custom-container#enable-ssh
+SSH Reference: https://docs.microsoft.com/bs-latn-ba/Azure/app-service/containers/configure-custom-container#enable-ssh
 
 
 # Django Vue Template ✌️ 🐍
