@@ -1,4 +1,4 @@
-# Azure App Service Web App for Containers Changes 📦💙 
+# Azure Web Apps for Containers 📦💙 
 
 ### Repository Modifications 
 
