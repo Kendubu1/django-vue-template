@@ -4,6 +4,7 @@ echo "Starting SSH..."
 
 echo "Template Setup"
 yarn install
+python --version
 pipenv install --dev && pipenv shell
 python manage.py migrate
 
