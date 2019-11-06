@@ -7,15 +7,9 @@ yarn install
 python --version
 
 echo "Venv Setup"
-#### 
-pipenv install --dev --skip-lock /bin/activate
-pipenv --where
+pipenv install --dev --skip-lock
 pipenv --venv
-echo "pip shell"
-$(pipenv --venv)/bin/activate
-pipenv shell
-####
-
+. $(pipenv --venv)/bin/activate
 python manage.py migrate
 
 echo "Starting Dev Server + Gunicorn..."
