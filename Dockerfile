@@ -17,8 +17,10 @@ RUN apk --update --no-cache  add openssh \
     && echo "$SSH_PASSWD" | chpasswd \
     && rm -rf /tmp/* /var/cache/apk/* \
     && apk add --no-cache postgresql-libs \
-    && apk add --no-cache --virtual .build-deps gcc musl-dev postgresql-dev \
+    && apk add --no-cache --virtual .build-deps gcc musl-dev postgresql-dev
     && pip install pipenv
+    && pip install psycopg2
+
     
 #INSTALL YARN
 RUN apk add yarn
