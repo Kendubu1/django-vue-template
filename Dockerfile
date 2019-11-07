@@ -16,6 +16,8 @@ RUN apk --update --no-cache  add openssh \
     && ssh-keygen -A \
     && echo "$SSH_PASSWD" | chpasswd \
     && rm -rf /tmp/* /var/cache/apk/* \
+    && apk add --no-cache postgresql-libs \
+    && apk add --no-cache --virtual .build-deps gcc musl-dev postgresql-dev \
     && pip install pipenv
     
 #INSTALL YARN
