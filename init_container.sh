@@ -14,6 +14,6 @@ python manage.py migrate
 
 echo "Starting Dev Server + Gunicorn..."
 yarn build
-gunicorn --bind=0.0.0.0 --timeout 600 backend.wsgi:application
+gunicorn --bind=0.0.0.0 --timeout 600 --log-level debug --access-logfile /django_vue/gunicorn-access.log --error-logfile /django_vue/gunicorn-error.log  backend.wsgi:application
 
 
