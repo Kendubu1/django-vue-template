@@ -5,7 +5,7 @@
 | Files             |  Content                                   |
 |----------------------|--------------------------------------------|
 | `Dockerfile`           | Python 3.6 Alpine Base image installing pipenv, yarn, ssh, & vue cli             |
-| `sshd_config`       | OpenSSH SSH daemon configuration file to                       |
+| `sshd_config`       | OpenSSH SSH daemon configuration file                       |
 | `init_container.sh`               | Initalization Script to start SSH, setup enviorment with yarn, venv & start server using gunicorn with logging enabled                                 |
 | `dev.py/prod.py`       | Enabled debug level logging & configured database engine within prod since gunicorn targets prod.py by default                  |
 
