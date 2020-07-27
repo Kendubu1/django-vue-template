@@ -1,4 +1,4 @@
-# Azure Web Apps for Containers 📦💙 
+# Azure Web Apps for Containers 🚧 (Under Revision)
 
 ### Repository Modifications 
 
